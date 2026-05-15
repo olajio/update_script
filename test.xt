@@ -1,0 +1,9 @@
+sudo AWS_CONFIG_FILE=/home/logstash/jenkins_config aws secretsmanager get-secret-value \
+  --secret-id arn:aws:secretsmanager:us-east-2:469620122115:secret:github_hsv_internal/itsma/service_elastic_auto_HSV-SRVK6D \
+  --region us-east-2 \
+  --query SecretString \
+  --output text | head -c 50
+
+
+
+sudo /usr/bin/python3 -c "import boto3; print(boto3.__version__)"
